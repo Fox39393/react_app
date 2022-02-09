@@ -1,23 +1,14 @@
-import MyButton from "./button/My-button"; 
-import {useState} from 'react';
-import ToggleButton from "./button/toggleButton";
+import UserList from "./UserList"
+import {users} from "../users"
+import UserAdd from "./UserAdd"
 
 const App = () => {
-  
-    const[buttonText, setButtonText] = useState(initialState:"click me");
-    const [toggle, setToggle] = useState(initialState: false);
     return (
     <div className="App">
-     <MyButton description="some button">{buttonText}</MyButton>
-     <ToggleButton 
-            toggle={toggle}
-            setToggle={setToggle}
-     >
-       {toggle ? 'One' : 'Two'}
-     </ToggleButton>
+       <UserList users={users}/>
+       <UserAdd/>
     </div>
-    )
-  ;
-}
+    );
+};
 
 export default App;
